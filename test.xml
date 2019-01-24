@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<server xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="uri:securiton/ums/opc/tools/daexporter/v01">
+  <exportVersion>1.0</exportVersion>
+  <group>
+    <id>Tunnel_1</id>
+    <name>Tunnel_1</name>
+    <parent />
+    <group>
+      <id>Tunnel_1.OPC_1</id>
+      <name>OPC_1</name>
+      <parent>Tunnel_1</parent>
+      <group>
+        <id>Tunnel_1.OPC_1.$</id>
+        <name>$</name>
+        <parent>Tunnel_1.OPC_1</parent>
+        <item>
+          <id>Tunnel_1.OPC_1.$.Connection State</id>
+          <name>Connection State</name>
+          <parent>Tunnel_1.OPC_1.$</parent>
+        </item>
+      </group>
+      <group>
+        <id>Tunnel_1.OPC_1.pWS_FIFA</id>
+        <name>pWS_FIFA</name>
+        <parent>Tunnel_1.OPC_1</parent>
+        <group>
+          <id>Tunnel_1.OPC_1.pWS_FIFA.primion_WebAccess</id>
+          <name>primion_WebAccess</name>
+          <parent>Tunnel_1.OPC_1.pWS_FIFA</parent>
+          <group>
+            <id>Tunnel_1.OPC_1.pWS_FIFA.primion_WebAccess.IDT8-100 L_B04_04_100</id>
+            <name>IDT8-100 L_B04_04_100</name>
+            <parent>Tunnel_1.OPC_1.pWS_FIFA.primion_WebAccess</parent>
+            <item>
+              <id>Tunnel_1.OPC_1.pWS_FIFA.primion_WebAccess.IDT8-100 L_B04_04_100.Meldepunkt_p0</id>
+              <name>Meldepunkt_p0</name>
+              <parent>Tunnel_1.OPC_1.pWS_FIFA.primion_WebAccess.IDT8-100 L_B04_04_100</parent>
+            </item>
+            <item>
+              <id>Tunnel_1.OPC_1.pWS_FIFA.primion_WebAccess.IDT8-100 L_B04_04_100.Gerätekonfiguration_p1</id>
+              <name>Gerätekonfiguration_p1</name>
+              <parent>Tunnel_1.OPC_1.pWS_FIFA.primion_WebAccess.IDT8-100 L_B04_04_100</parent>
+            </item>
+            <item>
+              <id>Tunnel_1.OPC_1.pWS_FIFA.primion_WebAccess.IDT8-100 L_B04_04_100.Ramakku_p2</id>
+              <name>Ramakku_p2</name>
+              <parent>Tunnel_1.OPC_1.pWS_FIFA.primion_WebAccess.IDT8-100 L_B04_04_100</parent>
+            </item>
+            <item>
+              <id>Tunnel_1.OPC_1.pWS_FIFA.primion_WebAccess.IDT8-100 L_B04_04_100.Notstrom_p3</id>
+              <name>Notstrom_p3</name>
+              <parent>Tunnel_1.OPC_1.pWS_FIFA.primion_WebAccess.IDT8-100 L_B04_04_100</parent>
+            </item>
+            <item>
+              <id>Tunnel_1.OPC_1.pWS_FIFA.primion_WebAccess.IDT8-100 L_B04_04_100.Alarme_p4</id>
+              <name>Alarme_p4</name>
+              <parent>Tunnel_1.OPC_1.pWS_FIFA.primion_WebAccess.IDT8-100 L_B04_04_100</parent>
+            </item>
+            <item>
+              <id>Tunnel_1.OPC_1.pWS_FIFA.primion_WebAccess.IDT8-100 L_B04_04_100.Zustand_p5</id>
+              <name>Zustand_p5</name>
+              <parent>Tunnel_1.OPC_1.pWS_FIFA.primion_WebAccess.IDT8-100 L_B04_04_100</parent>
+            </item>
+            <item>
+              <id>Tunnel_1.OPC_1.pWS_FIFA.primion_WebAccess.IDT8-100 L_B04_04_100.Netzbetrieb_p6</id>
+              <name>Netzbetrieb_p6</name>
+              <parent>Tunnel_1.OPC_1.pWS_FIFA.primion_WebAccess.IDT8-100 L_B04_04_100</parent>
+            </item>
+            <item>
+              <id>Tunnel_1.OPC_1.pWS_FIFA.primion_WebAccess.IDT8-100 L_B04_04_100.SBB_p7</id>
+              <name>SBB_p7</name>
+              <parent>Tunnel_1.OPC_1.pWS_FIFA.primion_WebAccess.IDT8-100 L_B04_04_100</parent>
+            </item>
+            <item>
+              <id>Tunnel_1.OPC_1.pWS_FIFA.primion_WebAccess.IDT8-100 L_B04_04_100.Service-Mode _p8</id>
+              <name>Service-Mode _p8</name>
+              <parent>Tunnel_1.OPC_1.pWS_FIFA.primion_WebAccess.IDT8-100 L_B04_04_100</parent>
+            </item>
+            <item>
+              <id>Tunnel_1.OPC_1.pWS_FIFA.primion_WebAccess.IDT8-100 L_B04_04_100.Kommunikation_a0</id>
+              <name>Kommunikation_a0</name>
+              <parent>Tunnel_1.OPC_1.pWS_FIFA.primion_WebAccess.IDT8-100 L_B04_04_100</parent>
+            </item>
+            <item>
+              <id>Tunnel_1.OPC_1.pWS_FIFA.primion_WebAccess.IDT8-100 L_B04_04_100.Meldepunkt_a1</id>
+              <name>Meldepunkt_a1</name>
+              <parent>Tunnel_1.OPC_1.pWS_FIFA.primion_WebAccess.IDT8-100 L_B04_04_100</parent>
+            </item>
+            <item>
+              <id>Tunnel_1.OPC_1.pWS_FIFA.primion_WebAccess.IDT8-100 L_B04_04_100.Bezeichnung</id>
+              <name>Bezeichnung</name>
+              <parent>Tunnel_1.OPC_1.pWS_FIFA.primion_WebAccess.IDT8-100 L_B04_04_100</parent>
+            </item>
+            <item>
+              <id>Tunnel_1.OPC_1.pWS_FIFA.primion_WebAccess.IDT8-100 L_B04_04_100.Beschreibung</id>
+              <name>Beschreibung</name>
+              <parent>Tunnel_1.OPC_1.pWS_FIFA.primion_WebAccess.IDT8-100 L_B04_04_100</parent>
+            </item>
+          </group>
+		</group>
+		          </group>
+		</group>
+	</group>
+</server>
+		  
