@@ -28,7 +28,8 @@
                 <Button Height="20" Width="150" Margin="5 10 5 10"></Button>-->
             </StackPanel>
             <StackPanel Margin="20 100 20 0">
-                <Button Height="20" Margin="5 10 5 10">Export to UMS Profile</Button>
+                <Button Name="btnExportToUMS" Height="20" Margin="5 10 5 10" Click="btnExportToUMS_Click">Export to UMS Profile</Button>
+                <TextBox Height="50" Name="tbTest"></TextBox>
             </StackPanel>
         </StackPanel>
         <xmlviewer:Viewer x:Name="vXMLViewer" BorderBrush="Black" BorderThickness="2"  Margin="5 5 5 5"  Grid.Column="1"></xmlviewer:Viewer>

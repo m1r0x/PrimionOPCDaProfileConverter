@@ -37,7 +37,10 @@ namespace PrimionOPCDaProfileConverter
 
             if (dlg.ShowDialog() != true) { return; }
 
+            // Load XML document from selected source.
+
             XmlDocument XMLdoc = new XmlDocument();
+
             try
             {
                 XMLdoc.Load(dlg.FileName);
@@ -50,12 +53,47 @@ namespace PrimionOPCDaProfileConverter
 
             rtbOpenFile.Text = dlg.FileName;
             vXMLViewer.xmlDocument = XMLdoc;
+
         }
 
         private void btnClearFile_Click(object sender, RoutedEventArgs e)
         {
             rtbOpenFile.Text = string.Empty;
             vXMLViewer.xmlDocument = null;
+        }
+
+        private void btnExportToUMS_Click(object sender, RoutedEventArgs e)
+        {
+
+
+            XmlDocument xmldoc = new XmlDocument();
+            try
+            {
+                xmldoc.Load(rtbOpenFile.Text);
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("No XML File selected");
+                return;
+            }
+            
+
+            XmlNodeList itemRefList = xmldoc.GetElementsByTagName("group");
+            foreach (XmlNode xn in itemRefList)
+            {
+                //XmlNodeList itemList = xmldoc.SelectNodes("//root/items/item[@id='" + xn.Attributes["idref"].Value + "']");
+                //XmlNodeList itemList = xmldoc.SelectNodes("//group/group/group/group/group[@id='" + xn.Attributes["idref"].Value + "']");
+                XmlNodeList doors = xmldoc.GetElementsByTagName("id");
+                foreach (XmlNode xItem in doors)
+                {
+                    string doorname = xItem.FirstChild.Value;
+                    tbTest.Text = doorname;
+                }
+
+                //tbTest.Text = itemList[0].Attributes["href"].Value;
+                
+            }
         }
     }
 }
