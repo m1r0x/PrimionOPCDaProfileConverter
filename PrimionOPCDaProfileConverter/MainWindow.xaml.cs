@@ -79,16 +79,17 @@ namespace PrimionOPCDaProfileConverter
             }
             
 
-            XmlNodeList itemRefList = xmldoc.GetElementsByTagName("group");
+            XmlNodeList itemRefList = xmldoc.GetElementsByTagName("parent");
             foreach (XmlNode xn in itemRefList)
             {
                 //XmlNodeList itemList = xmldoc.SelectNodes("//root/items/item[@id='" + xn.Attributes["idref"].Value + "']");
                 //XmlNodeList itemList = xmldoc.SelectNodes("//group/group/group/group/group[@id='" + xn.Attributes["idref"].Value + "']");
-                XmlNodeList doors = xmldoc.GetElementsByTagName("id");
+                //XmlNodeList doors = xmldoc.SelectNodes("//group/group/group[2]/group/group/id");
+                XmlNodeList doors = xmldoc.SelectNodes("//item/parent[1]");
                 foreach (XmlNode xItem in doors)
                 {
-                    string doorname = xItem.FirstChild.Value;
-                    tbTest.Text = doorname;
+                    string doorname = xItem.Value;
+                    tbTest.Text = doorname.ToString();
                 }
 
                 //tbTest.Text = itemList[0].Attributes["href"].Value;
