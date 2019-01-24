@@ -1,0 +1,36 @@
+﻿<Window x:Class="PrimionOPCDaProfileConverter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PrimionOPCDaProfileConverter"
+        xmlns:xmlviewer="clr-namespace:XMLViewer"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <StackPanel>
+                <TextBlock FontSize="15" FontWeight="Bold"  HorizontalAlignment="Center" Margin="0 10 0 10">Primion to UMS Profile Exporter</TextBlock>
+                <TextBox Height="50" TextWrapping="Wrap" AcceptsReturn="True" HorizontalAlignment="Center">With this exporter you can Export any Primion OPC DA File to UMS Profile</TextBox>
+            </StackPanel>
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Name="btnLoadFile" Height="20" Width="100" Margin="5 10 5 10" Click="btnOpenFile_Click"> Open File</Button>
+                    <Button Name="btnClearFile" Height="20" Width="100" Margin="5 10 5 10" Click="btnClearFile_Click">Clear File</Button>
+                </StackPanel>
+                <TextBox Name="rtbOpenFile" IsReadOnly="true" BorderBrush="Black" BorderThickness="1"  Margin="5 5 5 5"  Grid.Column="1"></TextBox>
+                <!--<Button Name="btnOpenFile" Height="20" Width="150" Margin="5 10 5 10" Click="btnLoadFile_Click">Load File</Button>-->
+                <!--<Button Height="20" Width="150" Margin="5 10 5 10"></Button>
+                <Button Height="20" Width="150" Margin="5 10 5 10"></Button>-->
+            </StackPanel>
+            <StackPanel Margin="20 100 20 0">
+                <Button Height="20" Margin="5 10 5 10">Export to UMS Profile</Button>
+            </StackPanel>
+        </StackPanel>
+        <xmlviewer:Viewer x:Name="vXMLViewer" BorderBrush="Black" BorderThickness="2"  Margin="5 5 5 5"  Grid.Column="1"></xmlviewer:Viewer>
+    </Grid>
+</Window>
