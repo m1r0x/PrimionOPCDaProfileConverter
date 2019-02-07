@@ -77,24 +77,23 @@ namespace PrimionOPCDaProfileConverter
                 MessageBox.Show("No XML File selected");
                 return;
             }
-            
 
-            XmlNodeList itemRefList = xmldoc.GetElementsByTagName("parent");
+
+
+            XmlNodeList itemRefList = xmldoc.GetElementsByTagName("item");
             foreach (XmlNode xn in itemRefList)
             {
-                //XmlNodeList itemList = xmldoc.SelectNodes("//root/items/item[@id='" + xn.Attributes["idref"].Value + "']");
-                //XmlNodeList itemList = xmldoc.SelectNodes("//group/group/group/group/group[@id='" + xn.Attributes["idref"].Value + "']");
-                //XmlNodeList doors = xmldoc.SelectNodes("//group/group/group[2]/group/group/id");
-                XmlNodeList doors = xmldoc.SelectNodes("//item/parent[1]");
+
+                XmlNodeList doors = xmldoc.SelectNodes("id");
                 foreach (XmlNode xItem in doors)
                 {
                     string doorname = xItem.Value;
                     tbTest.Text = doorname.ToString();
                 }
 
-                //tbTest.Text = itemList[0].Attributes["href"].Value;
-                
             }
+
+
         }
     }
 }

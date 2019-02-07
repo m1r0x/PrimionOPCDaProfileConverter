@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema targetNamespace="uri:securiton/ums/opc/tools/daexporter/v01" xmlns="uri:securiton/ums/opc/tools/daexporter/v01"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+  <xs:element name="server" type="OpcServerT" />
+  <xs:element name="group" type="OpcGroupT" />
+  <xs:element name="item" type="OpcItemT" />
+  <xs:complexType name="OpcServerT">
+    <xs:sequence>
+      <xs:element name="exportVersion" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded" >
+        <xs:element ref="group"/>
+        <xs:element ref="item"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpcGroupT">
+    <xs:sequence>
+      <!-- full qualifier-->
+      <xs:element name="id" type="xs:string" nillable="false" />
+      <xs:element name="name" type="xs:string" nillable="false" />
+      <xs:element name="parent" type="xs:string" nillable="true" />
+      <xs:element name="item" type="OpcItemT" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="property" type="OpcPropertyT" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element ref="group" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpcItemT">
+    <xs:sequence>
+      <xs:element name="id" type="xs:string" nillable="false" />
+      <xs:element name="name" type="xs:string" nillable="false" />
+      <xs:element name="parent" type="xs:string" nillable="false" />
+      <xs:element name="property" type="OpcPropertyT" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpcPropertyT">
+    <xs:sequence>
+      <xs:element name="id" type="xs:int" nillable="false" />
+      <xs:element name="type" type="xs:string" nillable="false" />
+      <xs:element name="description" type="xs:string" />
+      <xs:element name="value" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
