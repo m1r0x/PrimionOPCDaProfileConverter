@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.IO;
 using Microsoft.Win32;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace PrimionOPCDaProfileConverter
 {
@@ -79,19 +80,21 @@ namespace PrimionOPCDaProfileConverter
             }
 
 
+            // Create an XmlNamespaceManager to resolve the default namespace.
+            XmlNamespaceManager nsmgr = new XmlNamespaceManager(xmldoc.NameTable);
+            nsmgr.AddNamespace("srv", "uri:securiton/ums/opc/tools/daexporter/v01");
 
-            XmlNodeList itemRefList = xmldoc.GetElementsByTagName("item");
-            foreach (XmlNode xn in itemRefList)
-            {
+            // Select the first book written by an author whose last name is Atwood.
+            XmlNode group;
+            XmlElement root = xmldoc.DocumentElement;
+            group = root.SelectSingleNode("srv:group[2]", nsmgr);
 
-                XmlNodeList doors = xmldoc.SelectNodes("id");
-                foreach (XmlNode xItem in doors)
-                {
-                    string doorname = xItem.Value;
-                    tbTest.Text = doorname.ToString();
-                }
+            MessageBox.Show(group.InnerText);
 
-            }
+
+
+
+
 
 
         }
